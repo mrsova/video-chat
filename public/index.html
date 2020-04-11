@@ -5,21 +5,46 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Видео чат в разработке</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="main.css" rel="stylesheet">
 </head>
 <body>
-</body>
-<script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+    <div class="container-fluid">
+        <div class="row h-10 w-100">
+            <div class="col">
+                <select id="filter" class="w-100 bg-dark text-light ml-2 mt-2 select font-weight-bold border">
+                    <option value="none">Normal</option>
+                    <option value="grayscale(100%)">B & W</option>
+                    <option value="sepia(100%)">Old School</option>
+                    <option value="contrast(150%)">Lumination</option>
+                    <option value="blur(20px)">Hidden Mist</option>
+                    <option value="invert(100%)">Dracula</option>
+                    <option value="hue-rotate(180deg">X-men Beast</option>
+                    <option value="saturate(25)">Super Saiyan God</option>
+                </select>
+            </div>
+            <div class="col">
+                <div class="float-right mt-3">
+                    <input class="form-check-input" type="checkbox" id="theme">
+                    <label class="form-check-label" for="theme">
+                        Dark Theme
+                    </label>
+                </div>
+            </div>
+        </div>
 
-<script>
-    $.ajax({
-        type: "GET",
-        url: "http://127.0.0.1:3000",
-        success: function(response){
-            alert( "Прибыли данные: " + response);
-        }
-    });
-</script>
+        <div class="row h-100 w-100">
+            <div class="col-12 col-sm-6 d-flex justify-content-center">
+                <div class="emebed-responsive embed-responsive-16by19">
+                    <video class="embed-responsive-item" muted></video>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 d-flex justify-content-center">
+                <div id="peerDiv" class="emebed-responsive embed-responsive-16by19">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bundle.js"></script>
+</body>
 </html>
