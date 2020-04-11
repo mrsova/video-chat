@@ -16,11 +16,10 @@ services:
 
   nodejs:
     container_name: chat.node
+    command: "npm run start-dev"
     image: node:10.17.0-jessie
-    restart: unless-stopped
     working_dir: /var/www/project
+    ports:
+      - "3000:3000"
     volumes:
       - .:/var/www/project
-
-volumes:
-  ssh_dir: {}
