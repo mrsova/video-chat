@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  nginx_chat:
+    container_name: chat.nginx
+    image: nginx:latest
+    depends_on:
+      - chat
+    volumes:
+      - .:/var/www/project
+      - ./docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/sites-enabled:/etc/nginx/sites-enabled
+      - ./docker/nginx/ssl:/etc/nginx/ssl
+    ports:
+      - "80:80"
+      - "443:443"
+
+  nodejs:
+    container_name: chat.node
+    image: node:10.17.0-jessie
+    working_dir: /var/www/project
+    volumes:
+      - .:/var/www/project
+
+volumes:
+  ssh_dir: {}
