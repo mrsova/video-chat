@@ -4,8 +4,7 @@ services:
   nginx_chat:
     container_name: chat.nginx
     image: nginx:latest
-    depends_on:
-      - chat
+    restart: unless-stopped
     volumes:
       - .:/var/www/project
       - ./docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
@@ -18,6 +17,7 @@ services:
   nodejs:
     container_name: chat.node
     image: node:10.17.0-jessie
+    restart: unless-stopped
     working_dir: /var/www/project
     volumes:
       - .:/var/www/project
