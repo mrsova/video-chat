@@ -18,4 +18,4 @@ yarn-error.log
 /public/widgets/responsible_widget/widget/i18n
 /public/widgets/responsible_widget/widget/css
 /public/widgets/responsible_widget/widget/js
-/public/mix-manifest.json
+/public/bundle.js
