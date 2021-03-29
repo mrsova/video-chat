@@ -72,6 +72,9 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
         function createVideo(stream) {
             createDiv();
             let video = document.createElement('video');
+            video.playsinline = true;
+            video.autoplay = true;
+            video.muted = true;
             video.id = 'peerVideo';
             video.srcObject = stream;
             video.setAttribute('class', 'embed-responsive-item');
