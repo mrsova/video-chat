@@ -1,11 +1,11 @@
-const fs = require('fs');
+//const fs = require('fs');
 const https = require('https');
 const express = require('express');
 const app = express();
 
 const credentials = {
-    key: fs.readFileSync('docker/nginx/ssl/device.key', 'utf8'),
-    cert: fs.readFileSync('docker/nginx/ssl/chat.dv.crt', 'utf8')
+    // key: fs.readFileSync('docker/nginx/ssl/device.key', 'utf8'),
+    // cert: fs.readFileSync('docker/nginx/ssl/chat.dv.crt', 'utf8')
 };
 let httpsServer = https.createServer(credentials, app);
 let io = require('socket.io')(httpsServer);

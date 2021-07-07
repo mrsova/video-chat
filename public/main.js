@@ -1,4 +1,4 @@
-const server = 'https://127.0.0.1:3000';
+const server = 'https://chat.local.dv:3000';
 const video = document.querySelector('video');
 const filter = document.querySelector('#filter');
 const checkboxTheme = document.querySelector('#theme');
